@@ -40,3 +40,11 @@ ro.bluetooth.version=5.2
 ro.miui.build.region=in
 ro.miui.region=IN
 persist.sys.locale=en-IN
+
+# System RW
+ro.secure=0
+ro.debuggable=1
+ro.adb.secure=0
+
+# SELinux
+ro.build.selinux=permissive
