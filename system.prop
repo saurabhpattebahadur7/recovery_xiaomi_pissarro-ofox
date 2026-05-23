@@ -14,6 +14,7 @@ ro.hardware.gatekeeper=beanpod
 # Kmsetkey
 ro.hardware.kmsetkey=beanpod
 
+# Device Identity
 ro.product.brand=Xiaomi
 ro.product.manufacturer=Xiaomi
 ro.product.marketname=Xiaomi 11i
@@ -23,8 +24,12 @@ ro.product.name=pissarroin
 ro.sf.lcd_density=440
 ro.soc.manufacturer=Mediatek
 ro.soc.model=MT6877V/TZA
+
+# Region
 persist.sys.timezone=Asia/Calcutta
 persist.sys.locale=en-IN
+
+# Security
 ro.secure=0
 ro.debuggable=1
 ro.adb.secure=0
