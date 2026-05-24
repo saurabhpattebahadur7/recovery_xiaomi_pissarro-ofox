@@ -108,10 +108,6 @@ PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
 
-# Otacert
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(LOCAL_PATH)/security/miui_releasekey
-
 # HIDL
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
 
