@@ -1,11 +1,11 @@
 #<src>                                                 <mnt_point>            <type>  <mnt_flags and options>                                                          <fs_mgr_flags>
 
 #Dynamic Partitions
-system                                                  /system                ext4          ro                                                                         wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-vendor                                                  /vendor                ext4          ro                                                                         wait,slotselect,avb,logical,first_stage_mount
-product                                                 /product               ext4          ro                                                                         wait,slotselect,avb,logical,first_stage_mount
-system_ext                                              /system_ext            ext4          ro                                                                         wait,avb,logical,first_stage_mount,slotselect
-odm                                                     /odm                   ext4          ro                                                                         wait,slotselect,avb,logical,first_stage_mount
+system                                                  /system                ext4          rw                                                                         wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+vendor                                                  /vendor                ext4          rw                                                                         wait,slotselect,avb,logical,first_stage_mount
+product                                                 /product               ext4          rw                                                                         wait,slotselect,avb,logical,first_stage_mount
+system_ext                                              /system_ext            ext4          rw                                                                         wait,avb,logical,first_stage_mount,slotselect
+odm                                                     /odm                   ext4          rw                                                                         wait,slotselect,avb,logical,first_stage_mount
 
 #Data
 /dev/block/by-name/metadata                             /metadata              ext4          noatime,nosuid,nodev,discard                                              wait,check,formattable,first_stage_mount
