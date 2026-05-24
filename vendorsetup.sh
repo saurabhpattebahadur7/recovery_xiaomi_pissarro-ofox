@@ -100,6 +100,28 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         #Maintainer Stuff
         export FOX_VERSION=R11.1
 
+        # Extra Binaries
+        export FOX_USE_LZ4_BINARY="1"
+        export FOX_USE_ZSTD_BINARY="1"
+        export FOX_USE_BUSYBOX_BINARY="1"
+        export FOX_DRASTIC_SIZE_REDUCTION="1"
+        export FOX_DELETE_AROMAFM="1"
+        export FOX_REMOVE_AAPT="1"
+
+        # KernelSU Support
+        export FOX_ENABLE_KERNELSU_SUPPORT="1"
+
+        # Settings Directory
+        export FOX_SETTINGS_ROOT_DIRECTORY=/data/recovery
+        export FOX_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
+
+        # Version Update
+        export FOX_VERSION="R12.1"
+
+        # Maintainer
+        export OF_MAINTAINER="Rolex"
+        export FOX_MAINTAINER_PATCH_VERSION="0"
+
     # run a process after formatting data to work-around MTP issues
     # export OF_RUN_POST_FORMAT_PROCESS="1"   disabling this since it causes issues with a12 decryption
 
