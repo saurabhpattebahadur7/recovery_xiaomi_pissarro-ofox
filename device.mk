@@ -82,3 +82,42 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.keymaster@4.1
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so
+
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint \
+    android.hardware.security.secureclock \
+    android.hardware.security.sharedsecret
+
+# Keystore2
+PRODUCT_PACKAGES += \
+    android.system.keystore2
+
+# Mtk plpath utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils \
+    mtk_plpath_utils.recovery
+
+# Otacert
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(LOCAL_PATH)/security/miui_releasekey
+
+# HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
+# Graphics
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common@1.0
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
