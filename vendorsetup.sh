@@ -119,6 +119,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         # Maintainer
               export OF_MAINTAINER="Rolex"
               export FOX_MAINTAINER_PATCH_VERSION="0"
+              export FOX_BUILD_TYPE="Stable"
 
     # run a process after formatting data to work-around MTP issues
     # export OF_RUN_POST_FORMAT_PROCESS="1"   disabling this since it causes issues with a12 decryption
