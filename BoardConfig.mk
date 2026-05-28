@@ -162,7 +162,6 @@ TW_NO_FASTBOOT_BOOT := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 TW_POWER_BUTTON_IS_NOT_SCREENSHOT := true
 
-OF_MAINTAINER := Rolex
 OF_SCREEN_H := 2400
 # Device Variants Support
 TARGET_OTA_ASSERT_DEVICE := pissarro,pissarroin,pissarroinpro,pissarropro
