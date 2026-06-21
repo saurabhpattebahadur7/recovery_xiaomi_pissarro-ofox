@@ -26,7 +26,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := pissarro
-PRODUCT_NAME := twrp_pissarro
+PRODUCT_NAME := fox_pissarro-eng
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := 21091116C
 PRODUCT_MANUFACTURER := Xiaomi 
