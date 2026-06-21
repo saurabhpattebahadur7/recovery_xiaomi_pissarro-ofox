@@ -19,3 +19,5 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),pissarro)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
+PRODUCT_COPY_FILES += \
+    device/xiaomi/pissarro/init.recovery.pissarro.rc:recovery/root/init.recovery.pissarro.rc
