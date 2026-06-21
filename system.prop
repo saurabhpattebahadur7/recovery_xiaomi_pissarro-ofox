@@ -6,6 +6,8 @@ ro.sys.usb.storage.type=mtp
 
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.metadata.enabled=true
+ro.crypto.volume.metadata.encryption=aes-256-cts
 
 # TEE
 ro.vendor.mtk_tee_gp_support=1
@@ -15,16 +17,15 @@ ro.vendor.mtk_mitee_support=1
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
 
-# Kmsetkey
+# Keymaster
+ro.hardware.keystore=beanpod
 ro.hardware.kmsetkey=beanpod
 
-# Device Identity
+# Device Identity — variant specific lines hata di
 ro.product.brand=Xiaomi
 ro.product.manufacturer=Xiaomi
 ro.product.marketname=Xiaomi 11i
 ro.product.model=21091116I
-ro.product.device=pissarroin
-ro.product.name=pissarroin
 ro.sf.lcd_density=440
 ro.soc.manufacturer=Mediatek
 ro.soc.model=MT6877V/TZA
@@ -37,3 +38,11 @@ persist.sys.locale=en-IN
 ro.secure=0
 ro.debuggable=1
 ro.adb.secure=0
+
+# Battery — MTK Power
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.vendor.mtk_power_opt=1
+ro.vendor.mtk_lpm_support=1
+ro.config.max_starting_bg=8
+ro.vendor.mtk_mem_boost_support=1
