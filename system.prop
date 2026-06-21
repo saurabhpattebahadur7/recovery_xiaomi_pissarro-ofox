@@ -21,3 +21,89 @@ ro.vendor.mtk_power_opt=1
 ro.vendor.mtk_lpm_support=1
 ro.config.max_starting_bg=8
 ro.vendor.mtk_mem_boost_support=1
+
+
+####################################
+# from device/xiaomi/pissarro/special_ro.prop
+####################################
+#logd buffer size
+ro.logd.size=2M
+# White Point Calibration
+ro.whitepoint_calibration_enable=false
+#Property for display feature histogram
+ro.displayfeature.histogram.enable=false
+# support unlimited color temperature adjust
+ro.vendor.colorpick_adjust=true
+ro.vendor.all_modes.colorpick_adjust=true
+# displayfeature use poll to monitor backlight brightness
+ro.vendor.xiaomi.bl.poll=true
+#Property for NewGamePQ
+ro.vendor.gcp.enable=true
+# Property of FPS switch for system setting and powerkeeper
+ro.vendor.fps.switch.default=true
+# Property of the powerkeeper notify df
+ro.vendor.smart_dfps.enable=true
+# Property of default FPS for CTS
+ro.vendor.display.default_fps=60
+# Property for CABC
+ro.vendor.cabc.enable=true
+# prop for display gir feature
+ro.vendor.display.gir.support=true
+# Prop for notify active app
+ro.vendor.standard.video.enable=true
+# Property for AMOLED panel
+ro.vendor.display.type=oled
+# 5g capability(0: not support 1:nsa 2:sa 3: 1+2)
+ro.vendor.radio.5g=3
+#Telephony features controller
+#value: 0000 0010
+ro.vendor.radio.features_common=2
+# prop for checking aod layer
+ro.vendor.aod_layer.check=true
+# enable wifi passpoint r1
+ro.vendor.net.enable_passpoint_r1=1
+####################################
+# from device/xiaomi/mt6877_common/common_ro.prop
+####################################
+# For common ro override property
+ro.soc.model=MT6877V/TZA
+ro.soc.manufacturer=Mediatek
+####################################
+# from device/xiaomi/mt6877_common/common_rw.prop
+####################################
+# For common rw override property
+####################################
+# from device/xiaomi/pissarro/special_rw.prop
+####################################
+#system property for displayfeature hidl
+sys.displayfeature_hidl=true
+# displayfeature and displayfeatureservice use it to debug pq effect
+sys.displayfeature.entry.enable=true
+#system property for HBM mode
+sys.displayfeature.hbm.enable=true
+#system prop for dc backlight
+persist.displayfeature.dc_backlight.enable=false
+#VSYNC durations for high fps
+debug.sf.high_fps.late.sf.duration=8300000
+debug.sf.high_fps.late.app.duration=10000000
+debug.sf.high_fps.early.sf.duration=8300000
+debug.sf.high_fps.early.app.duration=10000000
+debug.sf.high_fps.earlyGl.sf.duration=8300000
+debug.sf.high_fps.earlyGl.app.duration=10000000
+debug.sf.high_fps.hwc.min.duration=7500000
+#enable sar feature
+persist.vendor.radio.dynamic_sar=1
+#wifi-add: enable mtk enhancelog
+persist.vendor.wifienhancelog=1
+#enable wechat videocall beauty
+persist.vendor.vcb.ability=true
+persist.vendor.vcb.enable=false
+#modem crash dump collect
+persist.vendor.mdlog.need_dump=1
+persist.sys.mdlog_dumpback=2
+#enable wechat videocall beauty
+persist.vendor.vcb.ability=true
+persist.vendor.vcb.enable=false
+#propperty for vonr setting support
+persist.vendor.vonr_setting_support=1
+####################################
