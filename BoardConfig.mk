@@ -202,4 +202,6 @@ BUILD_BROKEN_DUP_RULES := true
 
 # System prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_RECOVERY_DEVICE_MODULES += \
+    init.recovery.pissarro.rc
 
