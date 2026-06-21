@@ -49,7 +49,7 @@ AB_OTA_PARTITIONS += \
     vbmeta_vendor
 
 # Kernel
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive androidboot.cpufreq=conservative buildvariant=eng
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -163,5 +163,43 @@ TW_DEFAULT_BRIGHTNESS := 1200
 TW_NO_FASTBOOT_BOOT := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-OF_MAINTAINER := Samrth
+OF_MAINTAINER := rolex
 OF_SCREEN_H := 2400
+# Device Variants Support
+TARGET_OTA_ASSERT_DEVICE := pissarro,pissarroin,pissarroinpro,pissarropro
+
+# OrangeFox Extra Config
+OF_STATUS_BAR_HEIGHT := 80
+OF_STATUS_INDENT_LEFT := 48
+OF_STATUS_INDENT_RIGHT := 48
+OF_ALLOW_DISABLE_NAVBAR := 0
+OF_ENABLE_LPTOOLS := 1
+
+# System RW
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
+
+TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+
+# Crypto FBE
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_USE_FSCRYPT_POLICY := 2
+
+# Extra Tools
+TW_INCLUDE_LIBRESETPROP := true
+TW_INCLUDE_FASTBOOTD := true
+TW_INCLUDE_FUSE_EXFAT := true
+
+# CPU
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
+# Display
+TW_FRAMERATE := 120
+
+# Build Hack
+BUILD_BROKEN_DUP_RULES := true
+
+# System prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
