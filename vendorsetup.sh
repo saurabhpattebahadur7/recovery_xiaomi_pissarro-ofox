@@ -40,7 +40,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
         #Building
               export LC_ALL="C"
-              export FOX_MANIFEST_VER="14.1"
+              export FOX_MANIFEST_VER="12.1"
               export ALLOW_MISSING_DEPENDENCIES=true
               export OF_TARGET_DEVICES="pissarro,pissarroin,pissarroinpro,pissarropro"
               export TARGET_DEVICE_ALT="pissarroin,pissarroinpro,pissarropro"
@@ -68,15 +68,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES="1"
 
         # OTA & MIUI
-              export OF_KEEP_DM_VERITY="0"
+              export OF_KEEP_DM_VERITY="1"
               export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR="1"
               export OF_DISABLE_MIUI_OTA_BY_DEFAULT="1"
-              export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES="1"
               export OF_NO_MIUI_PATCH_WARNING="1"
               export OF_DONT_PATCH_ENCRYPTED_DEVICE="1"
               export OF_NO_TREBLE_COMPATIBILITY_CHECK="1"
               export OF_PATCH_AVB20="1"
-              export FOX_BUGGED_AOSP_ARB_WORKAROUND="1717027200"
+              export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"
 
         #Backup
               export OF_SKIP_MULTIUSER_FOLDERS_BACKUP="1"
@@ -98,28 +97,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               export FOX_DELETE_AROMAFM="1"
               export OF_USE_GREEN_LED=0
 
-
-        # Extra Binaries
-              export FOX_USE_LZ4_BINARY="1"
-              export FOX_USE_ZSTD_BINARY="1"
-              export FOX_USE_BUSYBOX_BINARY="1"
-              export FOX_DRASTIC_SIZE_REDUCTION="1"
-              export FOX_REMOVE_AAPT="1"
-
-        # KernelSU Support
-              export FOX_ENABLE_KERNELSU_SUPPORT="1"
-
-        # Settings Directory
-              export FOX_SETTINGS_ROOT_DIRECTORY=/data/recovery
-              export FOX_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
-
-        # Version Update
-              export FOX_VERSION="R14.1"
-
-        # Maintainer
-              export OF_MAINTAINER="Rolex"
-              export FOX_MAINTAINER_PATCH_VERSION="0"
-              export FOX_BUILD_TYPE="Stable"
+        #Maintainer Stuff
+        export FOX_VERSION=R11.1
 
     # run a process after formatting data to work-around MTP issues
     # export OF_RUN_POST_FORMAT_PROCESS="1"   disabling this since it causes issues with a12 decryption
