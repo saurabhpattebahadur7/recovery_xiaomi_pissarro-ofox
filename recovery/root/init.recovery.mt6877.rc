@@ -91,3 +91,73 @@ on property:twrp.decrypt.done=true
 
 on boot
     start health-hal-2-1
+
+on init
+    # Logd buffer size
+    setprop ro.logd.size 2M
+
+    # SoC info
+    setprop ro.soc.model MT6877V/TZA
+    setprop ro.soc.manufacturer Mediatek
+
+    # Display type
+    setprop ro.vendor.display.type oled
+
+    # FPS default
+    setprop ro.vendor.display.default_fps 60
+
+    # 5G capability
+    setprop ro.vendor.radio.5g 3
+
+    # Radio features
+    setprop ro.vendor.radio.features_common 2
+
+    # DisplayFeature HIDL
+    setprop sys.displayfeature_hidl true
+    setprop sys.displayfeature.entry.enable true
+    setprop sys.displayfeature.hbm.enable true
+
+    # DC Backlight
+    setprop persist.displayfeature.dc_backlight.enable false
+
+    # VSYNC durations high FPS
+    setprop debug.sf.high_fps.late.sf.duration 8300000
+    setprop debug.sf.high_fps.late.app.duration 10000000
+    setprop debug.sf.high_fps.early.sf.duration 8300000
+    setprop debug.sf.high_fps.early.app.duration 10000000
+    setprop debug.sf.high_fps.earlyGl.sf.duration 8300000
+    setprop debug.sf.high_fps.earlyGl.app.duration 10000000
+    setprop debug.sf.high_fps.hwc.min.duration 7500000
+
+    # SAR / Radio
+    setprop persist.vendor.radio.dynamic_sar 1
+    setprop persist.vendor.radio.features_common 2
+    setprop persist.vendor.vonr_setting_support 1
+
+    # WiFi
+    setprop ro.vendor.net.enable_passpoint_r1 1
+    setprop persist.vendor.wifienhancelog 1
+
+    # VoNR / VCB
+    setprop persist.vendor.vcb.ability true
+    setprop persist.vendor.vcb.enable false
+
+    # Modem dump
+    setprop persist.vendor.mdlog.need_dump 1
+    setprop persist.sys.mdlog_dumpback 2
+
+    # AOD / GIR / CABC / Color
+    setprop ro.vendor.aod_layer.check true
+    setprop ro.vendor.display.gir.support true
+    setprop ro.vendor.cabc.enable true
+    setprop ro.vendor.colorpick_adjust true
+    setprop ro.vendor.all_modes.colorpick_adjust true
+
+    # Misc display
+    setprop ro.vendor.xiaomi.bl.poll true
+    setprop ro.vendor.gcp.enable true
+    setprop ro.vendor.fps.switch.default true
+    setprop ro.vendor.smart_dfps.enable true
+    setprop ro.vendor.standard.video.enable true
+    setprop ro.whitepoint_calibration_enable false
+    setprop ro.displayfeature.histogram.enable false
