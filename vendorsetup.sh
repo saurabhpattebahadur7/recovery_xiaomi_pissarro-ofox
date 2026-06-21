@@ -76,7 +76,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               export OF_DONT_PATCH_ENCRYPTED_DEVICE="1"
               export OF_NO_TREBLE_COMPATIBILITY_CHECK="1"
               export OF_PATCH_AVB20="1"
-              export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"
+              export FOX_BUGGED_AOSP_ARB_WORKAROUND="1717027200"
 
         #Backup
               export OF_SKIP_MULTIUSER_FOLDERS_BACKUP="1"
