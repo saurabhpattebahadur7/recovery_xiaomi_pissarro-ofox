@@ -18,6 +18,9 @@
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
@@ -62,72 +65,20 @@ PRODUCT_PACKAGES += \
 # Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl-default
+    android.hardware.health@2.1-impl
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service
 
-# FIX: hardcoded "pissarro" hata diya — ab sab variants kaam karenge
 PRODUCT_COPY_FILES += \
-    $(TARGET_OUT_VENDOR)/bin/hw/android.hardware.gatekeeper@1.0-service:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/android.hardware.gatekeeper@1.0-service
+$(OUT_DIR)/target/product/pissarro/vendor/bin/hw/android.hardware.gatekeeper@1.0-service:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/android.hardware.gatekeeper@1.0-service
 
 # Additional Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
-    libpuresoftkeymasterdevice \
-    libkeymaster_portable \
-    libkeymaster_messages
+    libpuresoftkeymasterdevice
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages.so
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1
-
-TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.keymaster@4.1
-
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so
-
-# Keymint
-PRODUCT_PACKAGES += \
-    android.hardware.security.keymint \
-    android.hardware.security.secureclock \
-    android.hardware.security.sharedsecret
-
-# Keystore2
-PRODUCT_PACKAGES += \
-    android.system.keystore2
-
-# Mtk plpath utils
-PRODUCT_PACKAGES += \
-    mtk_plpath_utils \
-    mtk_plpath_utils.recovery
-
-# HIDL
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
-
-# Graphics
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.common@1.0
-
-# Thermal HAL — battery throttling ke liye
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
-
-# MTK libs — decryption + memory management
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libion
-
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
