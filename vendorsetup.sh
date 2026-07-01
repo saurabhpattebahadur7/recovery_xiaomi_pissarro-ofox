@@ -50,8 +50,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
 
         #Debug
-              export FOX_INSTALLER_DEBUG_MODE="1"
-              export FOX_BUILD_DEBUG_MESSAGES="1"
+              export FOX_INSTALLER_DEBUG_MODE=0
+              export FOX_BUILD_DEBUG_MESSAGES=0
               export OF_IGNORE_LOGICAL_MOUNT_ERRORS="1"
 
         #Binaries
@@ -72,7 +72,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR="1"
               export OF_DISABLE_MIUI_OTA_BY_DEFAULT="1"
               export OF_NO_MIUI_PATCH_WARNING="1"
-              export OF_DONT_PATCH_ENCRYPTED_DEVICE="1"
+            # export OF_DONT_PATCH_ENCRYPTED_DEVICE="1"
               export OF_NO_TREBLE_COMPATIBILITY_CHECK="1"
               export OF_PATCH_AVB20="1"
               export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"
@@ -98,7 +98,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
               export OF_USE_GREEN_LED=0
 
         #Maintainer Stuff
-        export FOX_VERSION=R11.1
+        export FOX_VERSION=R12.1
 
     # run a process after formatting data to work-around MTP issues
     # export OF_RUN_POST_FORMAT_PROCESS="1"   disabling this since it causes issues with a12 decryption
